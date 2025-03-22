@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> БІТІРІЙКІ! </title>
+  <style>
+   div
+    {
+      width: 180px;
+      height:60px;
+      border: 5px solid black;
+      margin-bottom:10px;
+      
+       position: relative; /* для того, щоб псевдоелемент використовував відносне розташування */
+    }
+    div:after 
+    {
+      content: "";
+      width:10px;
+      height:25px;
+      background:black;
+      display: block;
+      position: absolute; /* робимо псевдоелемент абсолютним */
+      top: 17px; /* щоб псевдоелемент був на одному рівні з div */
+      left: 100%; /* ставимо псевдоелемент праворуч від div */
+    }
+    .battery1::before
+    {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color:red;
+      height: 60px;
+      width:60px;;
+    }
+    .battery2::before
+    {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color:yellow;
+      height: 60px;
+      width:120px;;
+    }
+    .battery3::before
+    {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color:green;
+      height: 60px;
+      width:180px;;
+    }
+  </style>
+</head>
+  <body>
+    <div class="battery1">
+      
+    </div>
+    <div class="battery2" >
+    </div>
+    <div class="battery3">
+    </div>
+  </body>
+</html>

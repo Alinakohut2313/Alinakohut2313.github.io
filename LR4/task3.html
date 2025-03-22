@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>тітле</title>
+  <style>
+   .title {
+      
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      
+    }
+
+    .title::before,
+    .title::after {
+      content: "";
+      flex-grow: 1;
+      height: 4px;
+      background-color: black;
+      margin: 0 10px;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="title">
+   
+      <h1>TITLE</h1>
+    </div>
+  </body>
+</html>
+  
