@@ -61,6 +61,11 @@ hr
 }
 table td:nth-child(even) {
     text-align: right; 
+    
+}
+table
+{
+	color: inherit; 
 }
 .profile-photo
 {
