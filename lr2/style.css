@@ -1,92 +1,68 @@
 * {
-  margin: 0 10px;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 .page-container {
-  max-width: 980px;
-  margin: 20px auto ;
-  display: flex;
-  gap: 50px;
+	max-width: 980px;
+	margin: 20px auto 0;
+	display: flex;
 }
 .left-side {
-  
-  width: 25%;
-  background-color: #3a5e90;
-}
 
+	width: 25%;
+	background-color: #3a5e90;
+	color: white;
+	padding:  0px 20px;
+}
 .right-side {
-  float: right;
-  width: calc(75% - 5px);
+
+	width: calc(75% - 6px);
+	
 }
-
-
-ul li {
-  
+ul {
+  font-size: 14px; 
+  margin: 10px 0;  
   list-style: none;
-  font-size: 14px; /* Розмір шрифту */
-  color: black; /* Колір тексту */
-  margin-bottom: 10px;  // Відстань між елементами списку
-  line-height: 10;  // Відстань між рядкам тексту всередині елемента
 }
-#title {
+a {
+    color: white; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+dl dt
+{
+  font-weight: bold; 
+}
+section
+{
+  margin: 20px 0;
+}
+ dd
+{
+  margin-bottom:  10px ;
+}
+ ul li
+{
+  font-weight: bold; 
+  margin-bottom:  10px ;
+}
+hr
+{
   
-  display: block; 
-  font-size: 17px; /* Змінює розмір шрифту */
-  color:white; /* Змінює колір тексту */
-  text-align: left; /* Вирівнює текст по центру */
-  font-weight: bold;
-   margin-bottom: 15px;  // Відстань між елементами списку
-  line-height: 1.6;  // Відстань між рядками тексту всередині елемента
+    width: 260px;
+    height: 2px; 
+    margin-top: 10px;
+    background-color: white; 
+    border: none; 
 }
-.left-hr {
-  height: 2px;
-  width: 240px;
-  background-color: white;
-}
-.right-hr
-{
- height: 2px;
- background-color: grey;
- margin-bottom: 15px;
-}
-.textwhite li
-{
-   color: white;
+table td:nth-child(even) {
+    text-align: right; 
 }
 .profile-photo
 {
   border-radius: 50%;
-}
-p
-{
- line-height: 1.5;  // Відстань між рядками тексту всередині елемента
-  margin-bottom: 20px;
-}
-.header
-{
-line-height: 1.6; 
-margin-bottom: 25px;
-}
-.exp
-{
-margin-bottom: 15px;
-}
-
-table{
-line-height:2;
-}
-td{
-font-size: 14px;
-}
-.rate{
-text-align:right;
-font-weight: 400;
-}
-.date{
-float:right;
-font-weight:400;
-}
-h3 > .date{
-font-size:16px;
 }
