@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фігура</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        .figure {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .figure::before {
+            content: "";
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background-color: yellow;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .figure::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background-color: blue;
+            border-radius: 50%;
+            z-index: -2;
+        }
+    </style>
+</head>
+<body>
+    <div class="figure">UA</div>
+</body>
+</html>
