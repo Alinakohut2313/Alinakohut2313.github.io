@@ -1,0 +1,11 @@
+a{
+    display: block;
+    width: 150px;
+    height: 100px;
+    background-color: rebeccapurple;
+    border: solid 2px black;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100px;
+    margin: 15px auto;
+}
