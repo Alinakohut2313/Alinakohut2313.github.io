@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .sheet {
+      width: 75%;
+      margin: 30px auto;
+      font-size: 16px;
+      overflow: hidden;
+    }
+
+    .sheet div {
+      float: left;
+      width: calc(100% / 6);
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid black;
+      background: #e6ffe6;
+      
+  
+    }
+
+    .sheet div:first-child {
+      width: 100%;
+      background: green;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      text-align:center;
+    }
+
+
+   div:nth-child(6n+1),
+ div:nth-child(6n+3),
+div:nth-child(6n+5) {
+  background: #ccffcc; 
+}
+    
+  </style>
+</head>
+<body>
+
+<div class="sheet">
+  <div >STUDENTS MARK SHEET</div>
+  <div>Name</div><div>Maths</div><div>Science</div><div>English</div><div>Physics</div><div>General Knowledge</div>
+  <div>David</div><div>85</div><div>87</div><div>88</div><div>92</div><div>88</div>
+  <div>Richard</div><div>91</div><div>81</div><div>78</div><div>71</div><div>74</div>
+  <div>John</div><div>81</div><div>86</div><div>83</div><div>84</div><div>92</div>
+  <div>Tony</div><div>84</div><div>86</div><div>87</div><div>82</div><div>81</div>
+  <div>Scott</div><div>71</div><div>79</div><div>82</div><div>88</div><div>89</div>
+</div>
+
+</body>
+</html>

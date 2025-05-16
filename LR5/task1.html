@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      background-color: #fff;
+    }
+
+    .pricing-card {
+      border: 4px solid lightgrey;
+      width: 300px;
+      text-align: center;
+      position: relative;
+    }
+
+    .pricing-card::before {
+      content: " ";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      height: 4px;
+      width: 100%;
+      background: #00cc66;
+    }
+
+    .pricing-card::after {
+      content: " ";
+      position: absolute;
+      bottom: -4px;
+      left: -3px;
+      height: 4px;
+      width: 100%;
+      background: #00cc66;
+    }
+
+    .title {
+      background-color: white;
+      color: #00cc66;
+      padding: 35px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .price {
+      background-color: #00cc66;
+      color: white;
+      padding: 10px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .features {
+      list-style: none;
+    }
+
+    .features li:nth-child(even) {
+      background-color: lightgrey;
+    }
+
+    .features li {
+      padding: 10px;
+      border-top: 1px solid #eee;
+      background-color: #f9f9f9;
+    }
+
+    .purchase-btn {
+      display: inline-block;
+      margin: 40px;
+      padding: 10px;
+      border: 2px solid #00cc66;
+      background-color: white;
+      color: #00cc66;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="pricing-card">
+    <h2 class="title">Basic</h2>
+    <div class="price">$99</div>
+    <ul class="features">
+      <li>Option</li>
+      <li>Option</li>
+      <li>Option</li>
+      <li>Option</li>
+      <li>Option</li>
+      <li>Option</li>
+    </ul>
+    <div class="purchase-btn">Purchase</div>
+  </div>
+</body>
+</html>

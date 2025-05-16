@@ -1,0 +1,68 @@
+<style>
+.table {
+  width: 800px;
+  margin: 30px auto;
+  font-family: sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+div {
+  float: left;
+  width: 20%;
+  box-sizing: border-box;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid white;
+}
+
+
+.table div:nth-child(-n+5) {
+  background-color: #b3d9ff;
+  font-weight: bold;
+  color: white;
+}
+
+
+div:nth-child(n+6):nth-child(5n+1) {
+ background-color: #b3d9ff;
+  color: white;
+}
+
+
+ div:nth-child(n+6):not(:nth-child(5n+1)) {
+  background-color: #eaf6ff;
+}
+</style>
+
+<div class="table">
+  <div>Company</div>
+  <div>Q1</div>
+  <div>Q2</div>
+  <div>Q3</div>
+  <div>Q4</div>
+
+  <div>Microsoft</div>
+  <div>20.3</div>
+  <div>30.5</div>
+  <div>23.5</div>
+  <div>40.3</div>
+
+  <div>Google</div>
+  <div>50.2</div>
+  <div>40.63</div>
+  <div>45.23</div>
+  <div>39.3</div>
+
+  <div>Apple</div>
+  <div>25.4</div>
+  <div>30.2</div>
+  <div>33.3</div>
+  <div>36.7</div>
+
+  <div>IBM</div>
+  <div>20.4</div>
+  <div>15.6</div>
+  <div>22.3</div>
+  <div>29.3</div>
+</div>
