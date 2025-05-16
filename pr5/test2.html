@@ -1,0 +1,49 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        div {
+            font-family: Oswald;
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 40px 0;
+        }
+        .section {
+            float: left;
+            width: 25%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        .s1, .s3 {
+            background-color: #ddd;
+        }
+        .s2, .s4 {
+            background-color: #ccc;
+        }
+        #header, #footer {
+            clear: left;
+            width: 100%;
+            height: 100px;
+            background-color: #eee;
+            margin: 10px 0;
+        }
+        .container {
+            width: 960px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">Header</div>
+        <div class="section s1">Section 1</div>
+        <div class="section s2">Section 2</div>
+        <div class="section s3">Section 3</div>
+        <div class="section s4">Section 4</div>
+        <div id="footer">Footer</div>
+    </div>
+</body>
+</html>
