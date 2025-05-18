@@ -1,0 +1,176 @@
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>буге</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #333;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 800px;
+      height: 300px;
+      background: #fff;
+      color: #000;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .burger-image {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      background: url('https://mamapizza.in.ua/wp-content/uploads/2024/04/product-burger-o.png') no-repeat center;
+      background-size: cover;
+    }
+
+    .menu-overlay {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .menu-overlay h2 {
+      position: relative;
+      top: 150px;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 10px;
+      background: black;
+      text-align: center;
+    }
+
+    .menu-overlay h2 span {
+      display: block;
+      font-size: 0.7em;
+      font-weight: normal;
+    }
+
+    .menu-content {
+      position: absolute;
+      left: 300px;
+      width: 500px;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .menu-content h3 {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+
+    .menu-items {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .menu-item {
+      text-align: center;
+      position: relative;
+      width: 33%;
+    }
+
+    .menu-item p {
+      margin: 5px 0;
+      position: relative;
+    }
+
+    /* Псевдоелементи для ромба під кожною ціною */
+    .menu-item p:nth-child(2),
+    .menu-item p:nth-child(4) {
+      margin-bottom: 20px; /* Додаємо місце для ромба */
+    }
+
+    .menu-item p:nth-child(2)::after,
+    .menu-item p:nth-child(4)::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%; /* під ціною */
+      transform: translate(-50%, 5px) rotate(45deg);
+      width: 10px;
+      height: 10px;
+      background: #999;
+      border: 1px solid #fff;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .menu-item p:nth-child(2)::before,
+    .menu-item p:nth-child(4)::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      transform: translateY(10px);
+      width: 100%;
+      height: 1px;
+      background: #999;
+      z-index: 1;
+    }
+
+    .button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .button:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="burger-image"></div>
+    <div class="menu-overlay">
+      <h2>БУРГЕР-ІТАЛІАН! <span>УCЬОГО 79 ГРН</span></h2>
+    </div>
+    <div class="menu-content">
+      <h3>Лови момент!</h3>
+      <div class="menu-items">
+        <div class="menu-item">
+          <p>MICHIGAN</p>
+          <p>64.00 ГРН</p>
+          <p>Cheeseburger</p>
+          <p>59.00 ГРН</p>
+        </div>
+        <div class="menu-item">
+          <p>Beef BBQ</p>
+          <p>59.00 ГРН</p>
+          <p>KETCHUP ROOM</p>
+          <p>68.00 ГРН</p>
+        </div>
+        <div class="menu-item">
+          <p>KETCHUP ROOM 2</p>
+          <p>72.00 ГРН</p>
+          <p>ELVIS</p>
+          <p>55.00 ГРН</p>
+        </div>
+      </div>
+    </div>
+    <button class="button">ВСЕ МЕНЮ</button>
+  </div>
+</body>
+</html>
