@@ -688,7 +688,9 @@ h5
     justify-content: center;
   }
 
-  
+  .header-nav{
+    background: #19191B;
+  }
  .main-image 
  {
   height:40vh;
@@ -1362,4 +1364,3 @@ h3
 }
 
 /*-----------------End of Media Queries----------------- */
-
