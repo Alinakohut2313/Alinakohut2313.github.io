@@ -688,9 +688,7 @@ h5
     justify-content: center;
   }
 
-  .header-nav{
-    background: transparent;
-  }
+  
  .main-image 
  {
   height:40vh;
@@ -1364,3 +1362,4 @@ h3
 }
 
 /*-----------------End of Media Queries----------------- */
+
