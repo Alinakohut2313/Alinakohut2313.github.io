@@ -311,6 +311,18 @@ p {
   border-radius: 233.5px;
   transform: rotate(-41.34deg);
 }
+
+.rect-wrapper
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  min-height: 175vh;
+  z-index: -1;
+}
+
 .Rectangle2 {
   /* Rectangle 9522 */
 
@@ -432,12 +444,18 @@ top: 60px;
 transform: rotate(-20.89deg);
 }
 
+/* .portfolio-slider{
+  min-height: 400px;
+  overflow: hidden;
+}
+
 .slider {
   display: flex;
   
   position: relative;
   
   transition: transform 0.5s ease;
+  
 }
 
 .slide {
@@ -454,7 +472,35 @@ transform: rotate(-20.89deg);
   max-width: 100%;
   
   padding:24px;
+} */
+
+.portfolio-slider {
+  min-height: 400px;
+  overflow-x: hidden; 
+  overflow-y: visible;
+  position: relative;
 }
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  background: #1E1E20;
+  border-radius: 20px;
+  min-height: 294px;
+  text-align: center;
+  flex: 0 0 100%; 
+  transition: transform 0.5s ease;
+}
+
+.slide img {
+  max-width: 100%;
+  padding: 24px;
+}
+
+
 .swiper-pos
 {
   display: flex;
@@ -507,14 +553,14 @@ background: rgba(30, 30, 32, 0.5);
 }
 .cnt 
 { 
-  width: 166px;
-  height: 44px;
+  min-width: 166px;
+  min-height: 44px;
   background: #5454D4;
+  margin-left:24px;
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 700;
-  margin: 2rem 1.25rem;
-  display: flex; 
+  
   font-family: 'Nunito Sans';
   line-height: 44px; 
   text-align: center; 
@@ -603,7 +649,10 @@ h5
   color:white;
   
 }
-
+.swipe2
+{
+  display: none;
+}
 /*-----------------Media Queries----------------- */
 /* ----------------- b) iPads, Tablets – 481px—768px ----------------- */
 @media (min-width: 481px) and (max-width: 768px) {
@@ -672,6 +721,20 @@ h5
   position: absolute;
   left:400px;
  }
+ .footer-nav {
+  font-family: 'Nunito Sans';
+  display: flex;
+  align-items: center;    
+  text-align: center;
+  flex-direction: column;
+  line-height: 4;
+  font-size: 18px;
+ 
+}
+.swipe2
+{
+  display: none;
+}
 }
 
 /* ----------------- c) Small screens, laptops – 769px—1024px ----------------- */
@@ -764,31 +827,19 @@ h3
    left:680px;
    
   }
-  .footer {
-    display: flex;
-    flex-direction: row;       
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    
-     
-}
  
-.footer-nav ul {
-    display: flex;       
-    flex-direction: row; 
-    gap: 30px;           
-    list-style: none;    
-    padding: 0;          
-    margin: 0;          
+ 
+.footer-nav {
+  font-family: 'Nunito Sans';
+  display: flex;
+  align-items: center;    
+  text-align: center;
+  flex-direction: column;
+  line-height: 4;
+  font-size: 18px;
+ 
 }
-.footer-copy {
-    margin-left: 40px;     
-    margin-top: 0;       
-    margin-bottom: 0;      
-    line-height: 1.2;
-    color: white;
-}
+
 .contact {
         display: flex; 
         flex-direction: row;       
@@ -803,7 +854,8 @@ h3
     .cnt {
         margin:0 3rem; 
     }
-    
+   
+
 }
 
 /* ----------------- d) Desktops, large screens – 1025px—1200px ----------------- */
@@ -880,14 +932,15 @@ article
     border-radius: 233.5px;
     transform: rotate(-54.37deg);
   }
-  .Rectangle2 {
-      
+
+  .Rectangle2 {     
     width: 3.97vh;
     height: 168.9vh;
     left: 926px;
     top: 161px;
     transform: rotate(65.37deg);
   }
+
   .container 
  {
     display: flex;
@@ -975,14 +1028,57 @@ h3
     .cnt {
         margin:0 3rem; 
     }
-    .slide {
-    flex: 0 0 calc(33.333% - 20px); /* 3 картки в ряд */
+  .slide {
+    flex: 0 0 calc(100% / 3); /* 3 слайди одночасно */
+  }
+  .slide:nth-child(3n+1) {
+    transform: translateY(-20px);
+  }
+  .slide:nth-child(3n+2) {
+    transform: translateY(10px);
+  }
+  .slide:nth-child(3n+3) {
+    transform: translateY(40px);
+  }
+  .slide {
+    background: transparent;
   }
   .btn
   {
     width:204px;
     height:58px;
   }
+  .swipe
+{
+  display:none;
+}
+.swipe2 {
+    display: flex; 
+    justify-content: center;
+  }
+
+ .dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+    .dot-active {
+        
+        background: #5454d4;
+      
+       
+    }
+
 }
 
 /* ----------------- e) Extra large screens, TV – 1201px+ ----------------- */
@@ -1219,10 +1315,52 @@ h3
     .cnt {
         margin:0 3rem; 
     }
-    .slide {
-    flex: 0 0 calc(33.333% - 20px); /* 3 картки в ряд */
+  .slide {
+    flex: 0 0 calc(100% / 3); /* 3 слайди одночасно */
   }
-  
+  .slide:nth-child(3n+1) {
+    transform: translateY(-20px);
+  }
+  .slide:nth-child(3n+2) {
+    transform: translateY(10px);
+  }
+  .slide:nth-child(3n+3) {
+    transform: translateY(40px);
+  }
+  .slide {
+    background: transparent;
+  }
+ .swipe
+ {
+  display:none;
+ }
+.swipe2 {
+    display: flex; 
+    justify-content: center;
+  }
+
+ .dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.dot-active {
+        
+        background: #5454d4;
+      
+       
+    }
+
 }
 
 /*-----------------End of Media Queries----------------- */
