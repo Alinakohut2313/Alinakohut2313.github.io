@@ -1,0 +1,58 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name</title>
+</head>
+<body>
+<ul id="outputList">
+        </ul>
+    <button id="startButton">Почати введення</button>
+    
+    <script>
+        
+        const outputList = document.getElementById('outputList');
+        const startButton=document.getElementById('startButton');
+
+        function startInputCycle() {
+            let fullName = '';
+            
+           
+            while (true) {
+                
+                
+                fullName = prompt("Введіть ваше ім'я та прізвище:");
+
+                
+                if (fullName === null) {
+                    break; 
+                } 
+                
+                
+                const trimmedName = fullName.trim(); 
+
+                
+                if (trimmedName === "") {
+                    alert("Введення не може бути порожнім. Спробуйте ще раз.");
+                    continue; 
+                }
+
+                
+                const listItem = document.createElement('li');
+                
+              
+                listItem.textContent = trimmedName;
+                
+            
+                outputList.appendChild(listItem);
+            }
+            
+         
+            alert("Введення даних завершено.");
+        }
+
+     
+        startButton.addEventListener('click', startInputCycle);
+    </script>
+</body>
+</html>

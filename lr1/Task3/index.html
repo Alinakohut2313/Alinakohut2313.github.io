@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блоки з літерами</title>
+    <style>
+     
+        #letters {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap; 
+        }
+        .letter-block {
+            padding: 15px;
+            border: 2px solid #007bff;
+            background-color: #f0f8ff;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer; 
+            transition: background-color 0.2s;
+        }
+        .letter-block:hover {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="showBlocksButton">Показати блоки</button>
+    
+    <div id="letters">
+        
+    </div>
+
+    <script>
+        
+        const lastName = 'Когут'; 
+        
+       
+        const button = document.getElementById('showBlocksButton');
+        const container = document.getElementById('letters');
+
+      
+        function handleButtonClick() {
+            
+            if (container.children.length > 0) {
+                
+                container.innerHTML = '';
+            } else {
+                 
+            
+                for (const letter of lastName) {
+                    
+                    const block = document.createElement('div');
+                    
+                   
+                    block.textContent = letter;
+                    
+                   
+                    block.classList.add('letter-block');
+                    
+                   
+                    block.addEventListener('mouseover', () => {
+                       
+                        alert("Це літера: [ " + letter + " ]");
+                    });
+
+                
+                    container.appendChild(block);
+                }
+            }
+        }
+
+
+        button.addEventListener('click', handleButtonClick);
+    </script>
+</body>
+</html>

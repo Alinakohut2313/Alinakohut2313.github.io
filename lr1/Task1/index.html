@@ -1,0 +1,28 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Name</title>
+    
+</head>
+<body>
+  <ol id="MyName">
+    
+  </ol>
+  
+  <script type="module">
+    
+const selectedLetters = ['A', 'L', 'I', 'N', 'A'];
+const listContainer = document.getElementById('MyName');
+
+
+selectedLetters.forEach(letter => {
+    
+    const listItem = document.createElement('li');
+    listItem.textContent = letter;
+
+    listContainer.appendChild(listItem);
+});
+  </script>
+  </body>
+</html>
