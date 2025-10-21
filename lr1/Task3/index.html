@@ -3,79 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блоки з літерами</title>
+    <title>Кнопуля</title>
     <style>
-     
-        #letters {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap; 
-        }
-        .letter-block {
-            padding: 15px;
-            border: 2px solid #007bff;
-            background-color: #f0f8ff;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer; 
-            transition: background-color 0.2s;
-        }
-        .letter-block:hover {
-            background-color: #007bff;
-            color: white;
+        #letters div {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: lightblue;
+            border: 1px solid black;
+            font-size: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-
-    <button id="showBlocksButton">Показати блоки</button>
-    
-    <div id="letters">
-        
-    </div>
+    <button id="showBtn">Показати блоки</button>
+    <div id="letters"></div>
 
     <script>
-        
-        const lastName = 'Когут'; 
-        
-       
-        const button = document.getElementById('showBlocksButton');
+        const btn = document.getElementById('showBtn');
         const container = document.getElementById('letters');
+        const surname = ['K', 'O', 'H', 'U', 'T'];
 
-      
-        function handleButtonClick() {
+        btn.addEventListener('click', () => {
             
-            if (container.children.length > 0) {
-                
+            if (container.hasChildNodes()) {
                 container.innerHTML = '';
-            } else {
-                 
+                return;
+            }
+
             
-                for (const letter of lastName) {
-                    
-                    const block = document.createElement('div');
-                    
-                   
-                    block.textContent = letter;
-                    
-                   
-                    block.classList.add('letter-block');
-                    
-                   
-                    block.addEventListener('mouseover', () => {
-                       
-                        alert("Це літера: [ " + letter + " ]");
-                    });
+            surname.forEach(letter => {
+                const div = document.createElement('div');
+                div.textContent = letter;
 
                 
-                    container.appendChild(block);
-                }
-            }
-        }
+                div.addEventListener('mouseover', () => {
+                    alert('Це літера: ' + letter);
+                });
 
-
-        button.addEventListener('click', handleButtonClick);
+                container.appendChild(div);
+            });
+        });
     </script>
 </body>
 </html>
