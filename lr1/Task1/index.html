@@ -1,28 +1,31 @@
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Name</title>
-    
+    <title>Ім'я</title>
 </head>
 <body>
-  <ol id="MyName">
+  <ul id="MyName">
     
-  </ol>
-  
+  </ul>
+  <style>ul{height:80px;width:80px}</style>
   <script type="module">
-    
-const selectedLetters = ['A', 'L', 'I', 'N', 'A'];
-const listContainer = document.getElementById('MyName');
+   const listContainer=document.getElementById('MyName')
+   
+   let myname=['A','L','I','N','A']
+   
+   for(let i=0;i<myname.length;i++)
+     {
+       const listItem = document.createElement('li');
 
-
-selectedLetters.forEach(letter => {
-    
-    const listItem = document.createElement('li');
-    listItem.textContent = letter;
-
-    listContainer.appendChild(listItem);
-});
+            listItem.textContent = myname[i];
+       
+            listItem.addEventListener('mouseover', (event) => {
+                alert("Ви навели на літеру: " + event.target.textContent);
+            });
+            listContainer.appendChild(listItem);
+     }
   </script>
-  </body>
+    </body>
 </html>
