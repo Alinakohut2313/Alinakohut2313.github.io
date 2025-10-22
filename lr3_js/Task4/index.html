@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Button</title>
+</head>
+<body>
+  <button id="hello">Say</button>
+
+  <script>
+    const userName = prompt("Введіть своє ім'я:");
+
+    const person = {
+      name: userName,
+      say() {
+        alert(`Hello, ${this.name}!`);
+      }
+    };
+
+    const button = document.getElementById('hello');
+
+    button.addEventListener('click', person.say.bind(person));
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Bot</title>
+</head>
+<body>
+<script>
+function* chatBot() {
+  const name = yield "Hi! What is your name?";
+  const mood = yield `Nice to meet you, ${name}! How are you?`;
+  yield `Goodbye, ${name}! I'm glad you feel ${mood}.`;
+}
+
+const bot = chatBot();
+
+
+let step = bot.next();
+while (!step.done) {
+  const userAnswer = prompt(step.value); 
+  step = bot.next(userAnswer);           
+}
+alert(step.value); 
+</script>
+</body>
+</html>

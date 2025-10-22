@@ -1,0 +1,49 @@
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+</head>
+<body>
+  <button id="start">Start creating password</button>
+  <div id="out"></div>
+
+  <script type="module">
+    const button = document.getElementById('start');
+    const container = document.getElementById('out');
+
+    
+    function* passwordGenerator() {
+      let password = "";
+      while (true) {
+        const input = yield; 
+        if (input === "done") {
+          return password; 
+        }
+        password += input; 
+      }
+    }
+
+    button.addEventListener('click', () => {
+      const generator = passwordGenerator();
+      generator.next(); 
+
+      while (true) {
+        const symbol = prompt("Введіть символ (або 'done' для завершення):");
+
+        if (symbol === null) {
+          alert("Ви скасували введення.");
+          return;
+        }
+
+        const result = generator.next(symbol);
+
+        if (result.done) {
+          container.innerText = "Ваш пароль: " + result.value;
+          break;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

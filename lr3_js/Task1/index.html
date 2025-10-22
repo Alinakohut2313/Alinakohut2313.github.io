@@ -1,0 +1,63 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random number</title>
+    
+</head>
+<body>
+  <button id="next">Next number</button>
+  <div id="out"></div>
+  <script type="module">
+   const button = document.getElementById('next');
+   const container = document.getElementById('out');
+
+   let generator;
+
+   function GetMinMax()
+   {
+    let min=0
+    let max=0
+    while(true)
+   {
+    min=prompt("Введіть мінімальне число:");
+    max=prompt("Введіть максимальне число:");
+     if (min === null || max===null) {
+                    break; 
+                } 
+     if (min === "" || max === "") {
+                    alert("Введення не може бути порожнім. Спробуйте ще раз.");
+                    continue; 
+                }           
+     min = Number(min);
+     max = Number(max);
+     
+
+     if (min >= max) {
+          alert("Мінімальне має бути менше за максимальне.");
+          continue;
+        }
+    generator = randomGenerator(min, max);
+        break;
+   }
+    
+   }
+  function* randomGenerator(min,max )
+  {
+   while(true)
+   {
+
+     yield Math.floor(Math.random() * (max - min + 1)) + min;
+   }
+  }
+   GetMinMax();
+  button.addEventListener('click', () => {
+    const randomNumber = generator.next().value;
+    container.innerText = "Випадкове число: " + randomNumber;
+});
+
+
+
+  </script>
+  </body>
+</html>
