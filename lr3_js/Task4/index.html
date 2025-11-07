@@ -8,18 +8,49 @@
   <button id="hello">Say</button>
 
   <script>
-    const userName = prompt("Введіть своє ім'я:");
+ let userName;
 
-    const person = {
-      name: userName,
-      say() {
-        alert(`Hello, ${this.name}!`);
-      }
-    };
 
-    const button = document.getElementById('hello');
+while (true) {
+  userName = prompt("Введіть своє ім'я:");
 
-    button.addEventListener('click', person.say.bind(person));
+  
+  if (userName === null) {
+    alert("Введення скасовано.");
+    break;
+  }
+
+  
+  userName = userName.trim();
+
+  if (userName === "") {
+    alert("Ім'я не може бути порожнім. Спробуйте ще раз.");
+    continue;
+  }
+
+  if (/\d/.test(userName)) {
+    alert("Ім'я не може містити цифри!");
+    continue;
+  }
+
+  break;
+}
+
+if (userName !== null && userName !== "") {
+  const person = {
+    name: userName,
+    say() {
+      alert(`Hello, ${this.name}!`);
+    }
+  };
+
+  const button = document.getElementById('hello');
+
+
+  button.addEventListener('click', person.say.bind(person));
+}
+
   </script>
 </body>
 </html>
+
