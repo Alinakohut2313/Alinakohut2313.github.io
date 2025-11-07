@@ -14,13 +14,45 @@ function* chatBot() {
 
 const bot = chatBot();
 
-
 let step = bot.next();
+
 while (!step.done) {
-  const userAnswer = prompt(step.value); 
-  step = bot.next(userAnswer);           
+  let userAnswer;
+
+  
+  while (true) {
+    userAnswer = prompt(step.value);
+
+    if (userAnswer === null) {
+      alert("Вихід із чату. До побачення!");
+      step = { done: true }; 
+      break;
+    }
+
+    userAnswer = userAnswer.trim();
+
+    if (userAnswer === "") {
+      alert("Введення не може бути порожнім. Спробуйте ще раз.");
+      continue;
+    }
+
+    if (/\d/.test(userAnswer)) {
+      alert("Вводити цифри не можна. Лише текст!");
+      continue;
+    }
+
+    break;
+  }
+
+  if (step.done) break;
+
+  step = bot.next(userAnswer);
 }
-alert(step.value); 
+
+if (step && step.value) {
+  alert(step.value);
+}
 </script>
 </body>
 </html>
+
