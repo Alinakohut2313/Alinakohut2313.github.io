@@ -1093,10 +1093,7 @@ color: #555;
 {
   display: none;
 }
-.service-item {
-    flex-direction: row; 
-    gap: 40px;
-  }
+
 
   
   .service-item:nth-child(even) {
@@ -1748,3 +1745,4 @@ h3
 }
 
 /*-----------------End of Media Queries----------------- */
+
