@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сайт креативного агентства з розробки цифрових продуктів</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200..900;1,200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+  </head>
+  <body>
+    
+    <!-- SVG спрайт -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Лінія -->
+  <symbol id="icon-line" viewBox="0 0 99 32">
+    <path d="M2 2L25.2781 26.2247L39.7483 8.60674L57.0497 26.2247L75.9238 8.60674L97 30"
+          stroke="#E7E7E7" stroke-width="4"/>
+  </symbol>
+
+  <!-- Кружечки -->
+  <symbol id="icon-circles" viewBox="0 0 51 60">
+    <circle cx="20" cy="20" r="18.5" stroke="white" stroke-width="3" fill="none"/>
+    <circle cx="31" cy="40" r="19.5" stroke="white" fill="none"/>
+  </symbol>
+
+  <!-- Плюс -->
+  <symbol id="icon-plus" viewBox="0 0 50 50">
+    <path d="M25 8.33337C26.1506 8.33337 27.0833 9.26611 27.0833 10.4167V22.9167H39.5833C40.7339 22.9167 41.6666 23.8495 41.6666 25.0001C41.6666 26.1506 40.7339 27.0834 39.5833 27.0834H27.0833V39.5834C27.0833 40.734 26.1506 41.6667 25 41.6667C23.8494 41.6667 22.9166 40.734 22.9166 39.5834V27.0834H10.4166C9.26605 27.0834 8.33331 26.1506 8.33331 25.0001C8.33331 23.8495 9.26605 22.9167 10.4166 22.9167H22.9166V10.4167C22.9166 9.26611 23.8494 8.33337 25 8.33337Z"
+          fill="#E7E7E7"/>
+  </symbol>
+
+  <!-- Трикутник -->
+  <symbol id="icon-triangle" viewBox="0 0 106 121">
+    <path d="M83.4286 50.3177L32.5136 78.1454L33.871 20.1368L83.4286 50.3177Z"
+          stroke="#E7E7E7" stroke-width="3" stroke-linejoin="round" fill="none"/>
+    <path d="M91.0241 71.3643L37.0687 100.854L38.5075 39.3818L91.0241 71.3643Z"
+          stroke="#E7E7E7" stroke-linejoin="round" fill="none"/>
+  </symbol>
+
+  <!-- Іконки послуг -->
+ <symbol id="icon-dev" viewBox="0 0 69 69" fill="none">
+  <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" 
+  d="M34.5 69C53.5538 69 69 53.5538 69 34.5C69 15.4462 53.5538 0 34.5 0C15.4462 0 0 15.4462 0 34.5C0 53.5538 15.4462 69 34.5 69Z" fill="#5454D4" fill-opacity="0.1"/>
+  <path xmlns="http://www.w3.org/2000/svg" d="M31 35.3333C30.12 35.7733 29.3867 36.4267 28.84 37.24C28.5333 37.7067 28.5333 38.2933 28.84 38.76C29.3867 39.5733 30.12 40.2267 31 40.6667" 
+  stroke="#5454D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path xmlns="http://www.w3.org/2000/svg" d="M39.2799 35.3333C40.1599 35.7733 40.8932 36.4267 41.4399 37.24C41.7466 37.7067 41.7466 38.2933 41.4399 38.76C40.8932 39.5733 40.1599 40.2267 39.2799 40.6667" 
+  stroke="#5454D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path xmlns="http://www.w3.org/2000/svg" d="M31 47.3333H39C45.6666 47.3333 48.3333 44.6667 48.3333 38V30C48.3333 23.3333 45.6666 20.6667 39 20.6667H31C24.3333 20.6667 21.6666 23.3333 21.6666 30V38C21.6666 44.6667 24.3333 47.3333 31 47.3333Z" 
+  stroke="#5454D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path xmlns="http://www.w3.org/2000/svg" d="M21.9733 28.68L47.5999 28.6667" stroke="#5454D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+
+   <symbol id="icon-uiux" viewBox="0 0 69 69" fill="none">
+  <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M34.5 69C53.5538 69 69 53.5538 69 34.5C69 15.4462 53.5538 0 34.5 0C15.4462 0 0 15.4462 0 34.5C0 53.5538 15.4462 69 34.5 69Z" fill="#F04037" fill-opacity="0.1"/>
+  <path xmlns="http://www.w3.org/2000/svg" d="M36.3467 21.8933L44.2134 25.3867C46.4801 26.3867 46.4801 28.04 44.2134 29.04L36.3467 32.5333C35.4534 32.9333 33.9867 32.9333 33.0934 32.5333L25.2267 29.04C22.9601 28.04 22.9601 26.3867 25.2267 25.3867L33.0934 21.8933C33.9867 21.4933 35.4534 21.4933 36.3467 21.8933Z" stroke="#F04037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path xmlns="http://www.w3.org/2000/svg" d="M23 32.6667C23 33.7867 23.84 35.08 24.8667 35.5333L33.92 39.56C34.6133 39.8667 35.4 39.8667 36.08 39.56L45.1333 35.5333C46.16 35.08 47 33.7867 47 32.6667" stroke="#F04037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path xmlns="http://www.w3.org/2000/svg" d="M23 39.3333C23 40.5733 23.7333 41.6933 24.8667 42.2L33.92 46.2267C34.6133 46.5333 35.4 46.5333 36.08 46.2267L45.1333 42.2C46.2667 41.6933 47 40.5733 47 39.3333" stroke="#F04037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+  <symbol id="icon-graphic" viewBox="0 0 69 69"fill="none">
+    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M34.5 69C53.5538 69 69 53.5538 69 34.5C69 15.4462 53.5538 0 34.5 0C15.4462 0 0 15.4462 0 34.5C0 53.5538 15.4462 69 34.5 69Z" fill="#FEDC5A" fill-opacity="0.1"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M31 36.3333C30.12 36.7733 29.3867 37.4267 28.84 38.24C28.5333 38.7067 28.5333 39.2933 28.84 39.76C29.3867 40.5733 30.12 41.2267 31 41.6667" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M39.2799 36.3333C40.1599 36.7733 40.8932 37.4267 41.4399 38.24C41.7466 38.7067 41.7466 39.2933 41.4399 39.76C40.8932 40.5733 40.1599 41.2267 39.2799 41.6667" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M31 48.3333H39C45.6666 48.3333 48.3333 45.6667 48.3333 39V31C48.3333 24.3333 45.6666 21.6667 39 21.6667H31C24.3333 21.6667 21.6666 24.3333 21.6666 31V39C21.6666 45.6667 24.3333 48.3333 31 48.3333Z" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M21.9733 29.68L47.5999 29.6667" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-motion" viewBox="0 0 69 69"fill="none">
+   <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M34.5 69C53.5538 69 69 53.5538 69 34.5C69 15.4462 53.5538 0 34.5 0C15.4462 0 0 15.4462 0 34.5C0 53.5538 15.4462 69 34.5 69Z" fill="#FEDC5A" fill-opacity="0.1"/>
+   <path xmlns="http://www.w3.org/2000/svg" d="M42.2 43.6666H27.8C25.8 43.6666 25 42.8133 25 40.6933V39.3066C25 37.1866 25.8 36.3333 27.8 36.3333H42.2C44.2 36.3333 45 37.1866 45 39.3066V40.6933C45 42.8133 44.2 43.6666 42.2 43.6666Z" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   <path xmlns="http://www.w3.org/2000/svg" d="M39.5333 32.3333H30.4666C28.4666 32.3333 27.6666 31.48 27.6666 29.36V27.9733C27.6666 25.8533 28.4666 25 30.4666 25H39.5333C41.5333 25 42.3333 25.8533 42.3333 27.9733V29.36C42.3333 31.48 41.5333 32.3333 39.5333 32.3333Z" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   <path xmlns="http://www.w3.org/2000/svg" d="M35 47.3334V44.1334" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   <path xmlns="http://www.w3.org/2000/svg" d="M35 35.3334V32.6667" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+   <path xmlns="http://www.w3.org/2000/svg" d="M35 20.6667V24.2534" stroke="#FEDC5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-photo" viewBox="0 0 69 69"fill="none">
+    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M34.5 69C53.5538 69 69 53.5538 69 34.5C69 15.4462 53.5538 0 34.5 0C15.4462 0 0 15.4462 0 34.5C0 53.5538 15.4462 69 34.5 69Z" fill="#5454D4" fill-opacity="0.1"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M28.0134 47.3334H41.9867C45.6667 47.3334 47.1334 45.08 47.3067 42.3334L48 31.32C48.1867 28.44 45.8934 26 43 26C42.1867 26 41.44 25.5334 41.0667 24.8134L40.1067 22.88C39.4934 21.6667 37.8934 20.6667 36.5334 20.6667H33.48C32.1067 20.6667 30.5067 21.6667 29.8934 22.88L28.9334 24.8134C28.56 25.5334 27.8134 26 27 26C24.1067 26 21.8134 28.44 22 31.32L22.6934 42.3334C22.8534 45.08 24.3334 47.3334 28.0134 47.3334Z" stroke="#5454D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M33 28.6667H37" stroke="#5454D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M35 42C37.3866 42 39.3333 40.0533 39.3333 37.6666C39.3333 35.28 37.3866 33.3333 35 33.3333C32.6133 33.3333 30.6666 35.28 30.6666 37.6666C30.6666 40.0533 32.6133 42 35 42Z" stroke="#5454D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-video" viewBox="0 0 69 69"fill="none">
+    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M34.5 69C53.5538 69 69 53.5538 69 34.5C69 15.4462 53.5538 0 34.5 0C15.4462 0 0 15.4462 0 34.5C0 53.5538 15.4462 69 34.5 69Z" fill="#F04037" fill-opacity="0.1"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M48.3333 38V30C48.3333 23.3333 45.6666 20.6666 39 20.6666H31C24.3333 20.6666 21.6666 23.3333 21.6666 30V38C21.6666 44.6666 24.3333 47.3333 31 47.3333H39C45.6666 47.3333 48.3333 44.6666 48.3333 38Z" stroke="#F04037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M22.36 27.48H47.64" stroke="#F04037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M30.36 20.8134V27.2934" stroke="#F04037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M39.64 20.8134V26.6934" stroke="#F04037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path xmlns="http://www.w3.org/2000/svg" d="M32 37.2667V35.6667C32 33.6133 33.4533 32.7733 35.2267 33.8L36.6133 34.6L38 35.4C39.7733 36.4267 39.7733 38.1067 38 39.1333L36.6133 39.9333L35.2267 40.7333C33.4533 41.76 32 40.92 32 38.8667V37.2667V37.2667Z" stroke="#F04037" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+
+    <section>
+      <header class="header">
+        <div class="content-wrap">
+          <a href="index.html" class="logo">
+            <img
+              src="./assets/images/hero_images/logo.svg"
+              alt="Логотип Digital Agency"
+            />
+          </a>
+          <nav id="headerNav" class="header-nav">
+            <ul class="main-menu">
+              <li><a href="#">Головна</a></li>
+              <li><a href="services.html">Послуги</a></li>
+              <li><a href="ourProjects.html">Наші проєкти</a></li>
+              <li><a href="aboutUs.html">Про нас</a></li>
+              <li class="main-contact"><a href="contact.html">Зв’язатись з нами</a></li>
+            </ul>
+          </nav>
+          <div id="burgerMenu" class="burger-menu">
+            <i id="openIcon" class="fa-solid fa-bars"></i>
+            <i id="closeIcon" class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="hero-section">
+        <section class="title">
+          <h1 class="h-style">Створи свою неймовірну платформу</h1>
+          <p>
+            Enver Studio — це цифрове агентство, яке пропонує послуги від UI/UX дизайну до розробки. Ми надаємо найкращий сервіс для тих, хто обирає нас.
+          </p>
+          <div class="btn">
+            Наші послуги
+            <img class="icon-service" src="./assets/images/vectors/Icon.svg" alt=""/>
+          </div>
+        </section>
+        <section class="hero-visual">
+          <div class="hero-decor">
+            <svg class="decor-line icon"><use xlink:href="#icon-line"></use></svg>
+            <svg class="decor-circles icon"><use xlink:href="#icon-circles"></use></svg>
+            <svg class="decor-plus icon"><use xlink:href="#icon-plus"></use></svg>
+            <svg class="decor-triangle pos-triangle icon"><use xlink:href="#icon-triangle"></use></svg>
+          </div>
+          <div class="hero-image-stack">
+            <div class="rect rect-white"></div>
+            <img
+              src="./assets/images/hero_images/Group%20162532.png"
+              alt="Головне зображення"
+              class="hero-img"
+            />
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <div class="rect-wrapper"><div class="Rectangle"></div></div>
+    <div class="rect-wrapper"><div class="Rectangle2"></div></div>
+
+    <section class="about-choice">
+      <div class="container">
+        <h2 class="h-style">Чому Enver — найкращий вибір?</h2>
+        <p>
+          Переглянь це хвилинне відео, щоб зрозуміти, чому варто обрати саме нас!
+        </p>
+      </div>
+      <div class="video-container">
+        <div class="video-overlay">
+          <img class="play" src="./assets/images/vectors/Play.svg" alt=""/>
+        </div>
+        <img
+          src="./assets/images/main-images/11eaf0faba4d811ef0e03a77959e60d62a5dc155.png"
+          alt="відео про наш вибір"
+          class="main-image"
+        />
+      </div>
+    </section>
+
+    <section class="service-section">
+      <div class="container">
+        <svg class="decor-triangle pos-triangle2 icon"><use xlink:href="#icon-triangle"></use></svg>
+        <h3 class="h-style">Послуги, які ми надаємо</h3>
+        <svg class="decor-plus2 icon"><use xlink:href="#icon-plus"></use></svg>
+      </div>
+    </section>
+
+    <section class="services">
+  <div class="services-container">
+    <article>
+      <svg class="service-icon"><use xlink:href="#icon-dev"></use></svg>
+      <span>Розробка</span>
+      <p>Створюй платформи найвищої якості разом із нами.</p>
+    </article>
+    <article>
+      <svg class="service-icon"><use xlink:href="#icon-uiux"></use></svg>
+      <span>UI/UX Дизайн</span>
+      <p>Ми надаємо UI/UX дизайн найвищого рівня.</p>
+    </article>
+    <article>
+      <svg class="service-icon"><use xlink:href="#icon-graphic"></use></svg>
+      <span>Графічний дизайн</span>
+      <p>Наші професійні дизайнери створять унікальні рішення.</p>
+    </article>
+    <article>
+      <svg class="service-icon"><use xlink:href="#icon-motion"></use></svg>
+      <span>Моушн-графіка</span>
+      <p>Розробляємо анімації найвищої якості.</p>
+    </article>
+    <article>
+      <svg class="service-icon"><use xlink:href="#icon-photo"></use></svg>
+      <span>Фотографія</span>
+      <p>Ми пропонуємо професійну фотозйомку для вашого бренду.</p>
+    </article>
+    <article>
+      <svg class="service-icon"><use xlink:href="#icon-video"></use></svg>
+      <span>Відеографія</span>
+      <p>Знімаємо відео з найкращою якістю та креативом.</p>
+    </article>
+  </div>
+</section>
+
+    <section class="portfolio">
+      <div class="container">
+        <svg class="decor-plus3 icon"><use xlink:href="#icon-plus"></use></svg>
+        <h4 class="h-style">Наше неймовірне портфоліо</h4>
+        <svg class="decor-circles2 icon"><use xlink:href="#icon-circles"></use></svg>
+      </div>
+    </section>
+
+    <section class="portfolio-slider">
+      <div class="slider">
+        <div class="slide"><img src="./assets/images/main-images/image-29.png" alt="Дизайн застосунку Squid Game"/></div>
+        <div class="slide"><img src="./assets/images/main-images/image-28.png" alt="Дизайн медіа-застосунку"/></div>
+        <div class="slide"><img src="./assets/images/main-images/image-30.png" alt="Дизайн стрімінгового застосунку"/></div>
+        <div class="slide"><img src="./assets/images/main-images/image-29.png" alt="Дизайн застосунку Squid Game"/></div>
+        <div class="slide"><img src="./assets/images/main-images/image-28.png" alt="Дизайн медіа-застосунку"/></div>
+        <div class="slide"><img src="./assets/images/main-images/image-30.png" alt="Дизайн стрімінгового застосунку"/></div>
+      </div>
+      <section class="swipe">
+        <div class="swiper-pos">
+          <a><img src="./assets/images/main-icons/Group-162492.svg" alt="попередній"/></a>
+          <a><img src="./assets/images/main-icons/Group-162491.svg" alt="наступний"/></a>
+        </div>
+      </section>
+      <section class="swipe2">
+        <div class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+    </section>
+  
+    <svg class="line-pos icon"><use xlink:href="#icon-line"></use></svg>
+
+    <section class="cnt-pos">
+      <div class="contact">
+        <svg class="pos-plus2 icon"><use xlink:href="#icon-plus"></use></svg>
+        <h5 class="h-style">Зв’яжіться з нами, щоб отримати потрібну послугу</h5>
+        <a class="cnt" href="">Зв’язатись</a>
+        <svg class="pos-circle2 icon"><use xlink:href="#icon-circles"></use></svg>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a href="index.html">
+        <img src="./assets/images/hero_images/logo.svg" alt="Логотип Digital Agency"/>
+      </a>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">Підтримка</a></li>
+          <li><a href="#">Політика конфіденційності</a></li>
+          <li><a href="#">Умови використання</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">© 2020 Enver, Усі права захищено</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Зв’язатися з нами - Digital Agency</title>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200..900;1,200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+    
+</head>
+<body>
+  <header class="header">
+      <div class="content-wrap">
+        <a href="index.html" class="logo">
+          <img
+            src="./assets/images/hero_images/logo.svg"
+            alt="Логотип Digital Agency"
+          />
+        </a>
+        <nav id="headerNav" class="header-nav">
+          <ul class="main-menu">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="services.html" class="active">Послуги</a></li>
+            <li><a href="ourProjects.html">Наші проєкти</a></li>
+            <li><a href="aboutUs.html">Про нас</a></li>
+            <li class="main-contact"><a href="contact.html">Зв’язатись з нами</a></li>
+          </ul>
+        </nav>
+        <div id="burgerMenu" class="burger-menu">
+          <i id="openIcon" class="fa-solid fa-bars"></i>
+          <i id="closeIcon" class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+    </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="cont">
+        
+        <h1 class="h-style">Маєте запитання? </h1>
+        <p>Заповніть форму нижче, і ми зв'яжемося з вами найближчим часом.</p>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="container">
+        <form class="contact-form" action="#" method="POST">
+          <label for="name">Ім’я</label>
+          <input type="text" id="name" name="name" placeholder="Ваше ім’я" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Ваш email" required />
+
+          <label for="subject">Тема</label>
+          <input type="text" id="subject" name="subject" placeholder="Тема повідомлення" />
+
+          <label for="message">Повідомлення</label>
+          <textarea id="message" name="message" placeholder="Ваше повідомлення" rows="6" required></textarea>
+
+          <button type="submit">Відправити</button>
+        </form>
+      </div>
+    </section>
+  </main>
+<div class="rect-wrapper-cnt"><div class="Rectangle"></div></div>
+    <div class="rect-wrapper-cnt"><div class="Rectangle2"></div></div>
+  <footer class="footer">
+    <a href="index.html">
+      <img src="./assets/images/hero_images/logo.svg" alt="Логотип Digital Agency"/>
+    </a>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="#">Підтримка</a></li>
+        <li><a href="#">Політика конфіденційності</a></li>
+        <li><a href="#">Умови використання</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">© 2020 Enver, Усі права захищено</p>
+  </footer>
+</body>
+</html>
