@@ -1210,10 +1210,7 @@ h3
         margin:0 3rem; 
     }
    
- .service-item {
-    flex-direction: row; 
-    gap: 40px;
-  }
+ 
 
   
   .service-item:nth-child(even) {
@@ -1745,4 +1742,5 @@ h3
 }
 
 /*-----------------End of Media Queries----------------- */
+
 
