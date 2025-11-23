@@ -163,16 +163,7 @@ ul {
   margin-right: 20px;
   margin-left: 5px;
 }
-h1 {
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 150%;
-  min-height:100px;
-  width:100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
+
 p {
   font-family: 'Nunito Sans';
   font-style: normal;
@@ -738,6 +729,8 @@ h5
 
 
 .process-section .step {
+  text-align: center;
+    max-width: 500px;
   position: relative;
   padding-top: 60px; 
 }
@@ -877,10 +870,9 @@ h5
 /* Стилі для нової сторінки ourProjects(Додати в кінець) */
 /* ================================================= */
 .projects-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 30px;
-padding: 60px 20px;
+display: flex;
+        justify-content: space-between;
+        gap: 20px;
 
 }
 
@@ -929,12 +921,12 @@ color: #555;
 }
 
 .faq .h-style {
-  text-align: center; 
+  text-align: center;
   margin-bottom: 40px;
 }
 
 .faq-list {
-  max-width: 800px; 
+  max-width: 800px;
   margin: 0 auto;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -947,22 +939,14 @@ color: #555;
 .faq-question-header {
   width: 100%;
   padding: 20px 0;
-  
-
   display: flex;
-  
- 
-  justify-content: space-between; 
-  
- 
-  align-items: center; 
-  
-  gap: 15px; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
 
-
 .faq-question-header span {
-  font-family: var(--alt-font); 
+  font-family: var(--alt-font);
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
@@ -971,54 +955,216 @@ color: #555;
 
 
 .pos-plus3.icon {
-  
   width: 28px;
   height: 28px;
-  
-  
-  flex-shrink: 0; 
-  
-
-  cursor: pointer; 
-  
- 
-  fill: #5454d4; 
-  
-
-  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+  fill: #5454d4;
+  transition: transform 0.3s ease; 
 }
 
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out;
-  padding: 0 20px; 
+  transition: max-height 0.35s ease, padding 0.3s ease;
+  padding: 0 0;
 }
-
-.faq-answer p {
-  font-family: var(--header-font); 
-  font-size: 16px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 20px 0; 
-}
-
-
 
 
 .faq-item.active .faq-answer {
-  max-height: 300px; 
+  max-height: 300px;
+  padding: 12px 0;
 }
 
 
-.faq-item.active .pos-plus3.icon {
+.faq-item.active .icon {
   transform: rotate(45deg);
 }
 
 /* ================================================= */
 /* Стилі для нової сторінки ourProjects(Додати в кінець) */
 /* ================================================= */
+
+/* ================================================= */
+/* Стилі для нової сторінки contact(Додати в кінець) */
+/* ================================================= */
+.contact-section {
+    padding: 80px 0;
+    justify-content: space-between;
+    position: relative; 
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    margin-left:30px;
+}
+.contact-link {
+  font-family: 'Nunito Sans';
+       
+    color: #fff;   
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;    
+}
+
+.info-items .item {
+    margin-bottom: 20px;
+}
+
+.info-items h3 {
+    color: var(--accent-purple);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+.contact-form-wrapper {
+    flex: 1;
+    min-width: 300px;
+   margin:70px;
+    background: #222222; 
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #444;
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--text-white);
+    font-family: var(--font-main);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+
+
+.btn-primary {
+    background: #5454D4;
+    border: none;
+    color: var(--text-white);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 100%; 
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 101, 255, 0.4);
+}
+.contact-form-wrapper label {
+    font-family: 'Montserrat';
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.contact-form-wrapper button {
+    background-color: #5454d4;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.info-items .item {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 25px; 
+}
+
+
+.icon-box {
+    color: #5454d4; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+   
+}
+
+
+.icon-box svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.text-box p {
+  
+    color: #fff; 
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+/* ================================================= */
+/* Стилі для нової сторінки contact(Додати в кінець) */
+/* ================================================= */
+
+/* ================================================= */
+/* Стилі для нової сторінки 404(Додати в кінець) */
+/* ================================================= */
+.error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .error-code {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 150px;
+            font-weight: 700;
+            color: #5454d4;
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(84, 84, 212, 0.5);
+        }
+        .error-text {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+/* ================================================= */
+/* Стилі для нової сторінки 404(Додати в кінець) */
+/* ================================================= */
+
 /*-----------------Media Queries----------------- */
 /* ----------------- b) iPads, Tablets – 481px—768px ----------------- */
 @media (min-width: 481px) and (max-width: 768px) {
@@ -1106,25 +1252,20 @@ color: #555;
   .content-wrap {
     display: flex;
     align-items: center;
-    
+
     padding: 0 20px;
   }
   
-  .header-nav {
-    display: flex;
-    position: static;
-    align-items: center;
-    width: 100%;
-    margin: 45px 0 0 0;
-    background: none;
-    transform: translateX(0);
-    padding: 0;
-  }
+  
 
   .main-menu {
-    display: none;
+    float: left;
+    flex-direction: row;
+    gap: 5px;
   }
-
+.header-nav{
+    background: #19191B;
+  }
   .main-contact {
     margin-left: auto;
     margin-top: -10px;
@@ -1210,7 +1351,10 @@ h3
         margin:0 3rem; 
     }
    
- 
+ .service-item {
+    flex-direction: row; 
+    gap: 40px;
+  }
 
   
   .service-item:nth-child(even) {
@@ -1742,5 +1886,3 @@ h3
 }
 
 /*-----------------End of Media Queries----------------- */
-
-

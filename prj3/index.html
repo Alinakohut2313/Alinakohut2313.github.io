@@ -104,29 +104,30 @@
 
 
     <section>
-      <header class="header">
-        <div class="content-wrap">
-          <a href="index.html" class="logo">
-            <img
-              src="./assets/images/hero_images/logo.svg"
-              alt="Логотип Digital Agency"
-            />
-          </a>
-          <nav id="headerNav" class="header-nav">
-            <ul class="main-menu">
-              <li><a href="#">Головна</a></li>
-              <li><a href="services.html">Послуги</a></li>
-              <li><a href="ourProjects.html">Наші проєкти</a></li>
-              <li><a href="aboutUs.html">Про нас</a></li>
-              <li class="main-contact"><a href="contact.html">Зв’язатись з нами</a></li>
-            </ul>
-          </nav>
-          <div id="burgerMenu" class="burger-menu">
-            <i id="openIcon" class="fa-solid fa-bars"></i>
-            <i id="closeIcon" class="fa-solid fa-xmark"></i>
-          </div>
+       <header class="header">
+      <div class="content-wrap">
+        <a href="index.html" class="logo">
+          <img
+            src="./assets/images/hero_images/logo.svg"
+            alt="Логотип Digital Agency"
+          />
+        </a>
+        <nav id="headerNav" class="header-nav">
+          <ul class="main-menu">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="services.html" class="active">Послуги</a></li>
+            <li><a href="ourProjects.html">Наші проєкти</a></li>
+            <li><a href="aboutUs.html">Про нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+            <li class="main-contact"><a href="contactUs.html">Зв’язатись з нами</a></li>
+          </ul>
+        </nav>
+        <div id="burgerMenu" class="burger-menu">
+          <i id="openIcon" class="fa-solid fa-bars"></i>
+          <i id="closeIcon" class="fa-solid fa-xmark"></i>
         </div>
-      </header>
+      </div>
+    </header>
 
       <div class="hero-section">
         <section class="title">
@@ -189,7 +190,7 @@
     </section>
 
     <section class="services">
-  <div class="services-container">
+  <div class="services-container" id="services-container">
     <article>
       <svg class="service-icon"><use xlink:href="#icon-dev"></use></svg>
       <span>Розробка</span>
@@ -242,8 +243,8 @@
       </div>
       <section class="swipe">
         <div class="swiper-pos">
-          <a><img src="./assets/images/main-icons/Group-162492.svg" alt="попередній"/></a>
-          <a><img src="./assets/images/main-icons/Group-162491.svg" alt="наступний"/></a>
+          <a id="prev"><img src="./assets/images/main-icons/Group-162492.svg" alt="попередній"/></a>
+          <a id="next"><img src="./assets/images/main-icons/Group-162491.svg" alt="наступний"/></a>
         </div>
       </section>
       <section class="swipe2">
@@ -261,7 +262,7 @@
       <div class="contact">
         <svg class="pos-plus2 icon"><use xlink:href="#icon-plus"></use></svg>
         <h5 class="h-style">Зв’яжіться з нами, щоб отримати потрібну послугу</h5>
-        <a class="cnt" href="">Зв’язатись</a>
+        <a class="cnt" href="contact.html">Зв’язатись</a>
         <svg class="pos-circle2 icon"><use xlink:href="#icon-circles"></use></svg>
       </div>
     </section>
@@ -279,5 +280,6 @@
       </nav>
       <p class="footer-copy">© 2020 Enver, Усі права захищено</p>
     </footer>
+   <script src="assets/scripts/scripts.js"></script>
   </body>
 </html>
