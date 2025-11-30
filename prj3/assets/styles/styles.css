@@ -539,7 +539,7 @@ background: rgba(30, 30, 32, 0.5);
   min-width: 166px;
   min-height: 44px;
   background: #5454D4;
-  margin-left:24px;
+  margin-left:55px;
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 700;
@@ -552,7 +552,7 @@ background: rgba(30, 30, 32, 0.5);
 }
 h5
 {
-  
+  margin-top:5rem;
   padding-bottom:1rem ;
   padding-left:1.5rem;
   
@@ -871,16 +871,17 @@ h5
 /* ================================================= */
 .projects-grid {
 display: flex;
+flex-wrap: nowrap;
         justify-content: space-between;
         gap: 20px;
-
+overflow-x: hidden;
 }
 
 
 .project-card {
 background: #202020;
 border-radius: 12px;
-
+min-width: 320px;
 box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -963,7 +964,6 @@ color: #555;
   transition: transform 0.3s ease; 
 }
 
-
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -973,7 +973,7 @@ color: #555;
 
 
 .faq-item.active .faq-answer {
-  max-height: 300px;
+  max-height: 1000px;
   padding: 12px 0;
 }
 
@@ -1164,7 +1164,106 @@ color: #555;
 /* ================================================= */
 /* Стилі для нової сторінки 404(Додати в кінець) */
 /* ================================================= */
+/* ==========================================
+   МОДАЛЬНЕ ВІКНО
+   ========================================== */
 
+/* 1. Фон (Overlay) - темна вуаль */
+.modal-overlay {
+    display: none; /* Приховано за замовчуванням */
+    position: fixed;
+    z-index: 2000; /* Має бути поверх усього, навіть хедера */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Чорний напівпрозорий фон */
+    backdrop-filter: blur(5px); /* Ефект розмиття фону (сучасно) */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Клас для відображення */
+.modal-overlay.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+/* 2. Саме вікно (Content) */
+.modal-content {
+    background-color: #202020; /* Темний фон картки */
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+/* 3. Кнопка закриття (Хрестик) */
+.close-modal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 4. Стилі форми всередині модалки */
+.modal-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+}
+
+.modal-form input:focus {
+    border-color: #5454d4;
+}
+.btn-cn
+{
+  font-family: 'Nunito Sans';
+  display: flex;
+  min-height: 44px;
+  max-width: 166px;
+  border-radius: 4px;
+  color: #fff;
+  align-items: center;
+  background: #5454d4;
+  text-align: center;
+  padding: 12px 10px;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 20px auto;
+   cursor: pointer;
+}
 /*-----------------Media Queries----------------- */
 /* ----------------- b) iPads, Tablets – 481px—768px ----------------- */
 @media (min-width: 481px) and (max-width: 768px) {
@@ -1241,10 +1340,7 @@ color: #555;
 }
 
 
-  
-  .service-item:nth-child(even) {
-    flex-direction: row-reverse;
-  }
+ 
 }
 
 /* ----------------- c) Small screens, laptops – 769px—1024px ----------------- */
@@ -1357,9 +1453,7 @@ h3
   }
 
   
-  .service-item:nth-child(even) {
-    flex-direction: row-reverse;
-  }
+  
 }
 
 /* ----------------- d) Desktops, large screens – 1025px—1200px ----------------- */

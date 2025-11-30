@@ -1,0 +1,66 @@
+{
+    "services": [
+        {
+            "iconId": "#icon-dev",
+            "title_uk": "Розробка",
+            "desc_uk": "Створюй платформи найвищої якості разом із нами."
+        },
+        {
+            "iconId": "#icon-uiux",
+            "title_uk": "UI/UX Дизайн",
+            "desc_uk": "Ми надаємо UI/UX дизайн найвищого рівня."
+        },
+        {
+            "iconId": "#icon-graphic",
+            "title_uk": "Графічний дизайн",
+            "desc_uk": "Наші професійні дизайнери створять унікальні рішення."
+        },
+        {
+            "iconId": "#icon-motion",
+            "title_uk": "Моушн-графіка",
+            "desc_uk": "Розробляємо анімації найвищої якості."
+        },
+        {
+            "iconId": "#icon-photo",
+            "title_uk": "Фотографія",
+            "desc_uk": "Ми пропонуємо професійну фотозйомку для вашого бренду."
+        },
+        {
+            "iconId": "#icon-video",
+            "title_uk": "Відеографія",
+            "desc_uk": "Знімаємо відео з найкращою якістю та креативом."
+        }
+    ],
+    "projects": [
+        {
+            "img": "./assets/images/main-images/image-29.png",
+            "title_uk": "Брендинг та веб‑розробка",
+            "desc_uk": "Айдентика, UX/UI дизайн і створення сучасного сайту."
+        },
+        {
+            "img": "./assets/images/main-images/image-28.png",
+            "title_uk": "Мобільний застосунок",
+            "desc_uk": "Функціональний додаток з анімаціями."
+        },
+        {
+            "img": "./assets/images/main-images/image-30.png",
+            "title_uk": "Корпоративний сайт",
+            "desc_uk": "Розробка платформи для внутрішньої комунікації."
+        },
+        {
+            "img": "./assets/images/main-images/image-29.png",
+            "title_uk": "Анімаційний проморолик",
+            "desc_uk": "Комплексна motion‑графіка для рекламної кампанії."
+        },
+        {
+            "img": "./assets/images/main-images/image-28.png",
+            "title_uk": "Редизайн інтернет‑магазину",
+            "desc_uk": "Оновлений UX, покращена структура."
+        },
+        {
+            "img": "./assets/images/main-images/image-30.png",
+            "title_uk": "Фото‑проєкт",
+            "desc_uk": "Професійні зйомки для бренду одягу."
+        }
+    ]
+}

@@ -74,112 +74,142 @@ const faqItems = document.querySelectorAll('.faq-item');
   // ==========================================
     // 5. ДИНАМІЧНИЙ ВИВІД JSON (Load Data)
     // ==========================================
-    function loadData() { // Прибираємо async, бо fetch більше немає
+    async function loadData() {
     const servicesContainer = document.getElementById('services-container');
     const projectsContainer = document.getElementById('projects-container');
 
+  
     if (!servicesContainer && !projectsContainer) return;
 
+    try {
+        
+        const response = await fetch('assets/data.json');
+        
+       
+        const data = await response.json();
 
-    const data = {
-        "services": [
-            {
-                "iconId": "#icon-dev",
-                "title_uk": "Розробка",
-                "desc_uk": "Створюй платформи найвищої якості разом із нами."
-            },
-            {
-                "iconId": "#icon-uiux",
-                "title_uk": "UI/UX Дизайн",
-                "desc_uk": "Ми надаємо UI/UX дизайн найвищого рівня."
-            },
-            {
-                "iconId": "#icon-graphic",
-                "title_uk": "Графічний дизайн",
-                "desc_uk": "Наші професійні дизайнери створять унікальні рішення."
-            },
-            {
-                "iconId": "#icon-motion",
-                "title_uk": "Моушн-графіка",
-                "desc_uk": "Розробляємо анімації найвищої якості."
-            },
-            {
-                "iconId": "#icon-photo",
-                "title_uk": "Фотографія",
-                "desc_uk": "Ми пропонуємо професійну фотозйомку для вашого бренду."
-            },
-            {
-                "iconId": "#icon-video",
-                "title_uk": "Відеографія",
-                "desc_uk": "Знімаємо відео з найкращою якістю та креативом."
+        if (servicesContainer && data.services) {
+            servicesContainer.innerHTML = ''; 
+            data.services.forEach(item => {
+                const article = document.createElement('article');
+                article.innerHTML = `
+                    <svg class="service-icon"><use xlink:href="${item.iconId}"></use></svg>
+                    <span>${item.title_uk}</span>
+                    <p>${item.desc_uk}</p>
+                `;
+                servicesContainer.appendChild(article);
+            });
+        }
+
+        // 4. Рендер Проєктів (якщо ми на сторінці проєктів)
+        if (projectsContainer && data.projects) {
+            projectsContainer.innerHTML = '';
+            data.projects.forEach(project => {
+                const div = document.createElement('div');
+                div.classList.add('project-card');
+                div.innerHTML = `
+                    <img src="${project.img}" alt="${project.title_uk}"/>
+                    <h3>${project.title_uk}</h3>
+                    <p>${project.desc_uk}</p>
+                `;
+                projectsContainer.appendChild(div);
+            });
+            
+            // Запускаємо автоскрол після того, як картки додалися
+          
+            if (typeof initAutoScroll === 'function') {
+                initAutoScroll();
             }
-        ],
-        "projects": [
-            {
-                "img": "./assets/images/main-images/image-29.png",
-                "title_uk": "Брендинг та веб‑розробка",
-                "desc_uk": "Айдентика, UX/UI дизайн і створення сучасного сайту."
-            },
-            {
-                "img": "./assets/images/main-images/image-28.png",
-                "title_uk": "Мобільний застосунок",
-                "desc_uk": "Функціональний додаток з анімаціями."
-            },
-             {
-                "img": "./assets/images/main-images/image-30.png",
-                "title_uk": "Корпоративний сайт",
-                "desc_uk": "Розробка платформи для внутрішньої комунікації."
-            },
-             {
-                "img": "./assets/images/main-images/image-29.png",
-                "title_uk": "Анімаційний проморолик",
-                "desc_uk": "Комплексна motion‑графіка для рекламної кампанії."
-            },
-             {
-                "img": "./assets/images/main-images/image-28.png",
-                "title_uk": "Редизайн інтернет‑магазину",
-                "desc_uk": "Оновлений UX, покращена структура."
-            },
-             {
-                "img": "./assets/images/main-images/image-30.png",
-                "title_uk": "Фото‑проєкт",
-                "desc_uk": "Професійні зйомки для бренду одягу."
-            }
-        ]
-    };
+        }
 
-
-    
-    // Рендер Послуг
-    if (servicesContainer && data.services) {
-        servicesContainer.innerHTML = ''; 
-        data.services.forEach(item => {
-            const article = document.createElement('article');
-            article.innerHTML = `
-                <svg class="service-icon"><use xlink:href="${item.iconId}"></use></svg>
-                <span>${item.title_uk}</span>
-                <p>${item.desc_uk}</p>
-            `;
-            servicesContainer.appendChild(article);
-        });
-    }
-
-    // Рендер Проєктів
-    if (projectsContainer && data.projects) {
-        projectsContainer.innerHTML = '';
-        data.projects.forEach(project => {
-            const div = document.createElement('div');
-            div.classList.add('project-card');
-            div.innerHTML = `
-                <img src="${project.img}" alt="${project.title_uk}"/>
-                <h3>${project.title_uk}</h3>
-                <p>${project.desc_uk}</p>
-            `;
-            projectsContainer.appendChild(div);
-        });
+    } catch (error) {
+        console.error('Помилка завантаження даних:', error);
     }
 }
 
 
+document.addEventListener('DOMContentLoaded', loadData);
+// ==========================================
+// АВТОМАТИЧНИЙ СКРОЛ ПРОЄКТІВ (Нескінченна стрічка)
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('projects-container');
+    
+    
+    if (!container) {
+        console.log("Помилка: Контейнер #projects-container не знайдено!");
+        return;
+    } 
+    console.log("Контейнер знайдено, запускаємо скрол...");
+
+   
+    const cards = Array.from(container.children);
+    if (cards.length === 0) return; 
+    
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        container.appendChild(clone);
+    });
 
 
+    let scrollPos = 0;
+    const speed = 1; 
+    let isPaused = false;
+
+    function animateScroll() {
+        if (!isPaused) {
+            scrollPos += speed;
+            
+           
+            if (scrollPos >= container.scrollWidth / 2) {
+                scrollPos = 0;
+            }
+            
+            container.scrollLeft = scrollPos;
+        }
+        requestAnimationFrame(animateScroll);
+    }
+
+    
+    container.addEventListener('mouseenter', () => isPaused = true);
+    container.addEventListener('mouseleave', () => isPaused = false);
+
+    animateScroll();
+});
+//модальне вікно
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const modal = document.getElementById("myModal");
+    const btn = document.getElementById("openModalBtn");
+    const closeSpan = document.querySelector(".close-modal");
+
+   
+    if (!modal || !btn || !closeSpan) return;
+
+   
+    btn.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        modal.classList.add("show");
+    });
+
+    // 2. Закрити при кліку на хрестик
+    closeSpan.addEventListener('click', () => {
+        modal.classList.remove("show");
+    });
+
+    // 3. Реалізація "Miss Click" (закриття при кліку на темний фон)
+    window.addEventListener('click', (event) => {
+        
+        if (event.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
+
+   
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "Escape" && modal.classList.contains("show")) {
+            modal.classList.remove("show");
+        }
+    });
+});
