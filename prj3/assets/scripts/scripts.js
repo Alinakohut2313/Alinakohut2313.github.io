@@ -83,7 +83,8 @@ const faqItems = document.querySelectorAll('.faq-item');
 
     try {
         
-        const response = await fetch('assets/data.json');
+               const response = await fetch('./assets/data/projects.json');
+
         
        
         const data = await response.json();
@@ -212,4 +213,5 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove("show");
         }
     });
+
 });
