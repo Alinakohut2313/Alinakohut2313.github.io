@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Captcha Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .captcha-wrapper {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 { margin: 0 0 10px 0; font-size: 18px; }
+
+        /* Контейнер для цифр */
+        #captcha-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 0; /* Прибрали відступ знизу, щоб злитись з інпутом */
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-bottom: none; /* Знизу відкрито */
+            justify-content: center;
+            background: #fff;
+        }
+
+        /* --- ГОЛОВНЕ: СТИЛІ ПІКСЕЛІВ --- */
+        .digit {
+            display: grid;
+            grid-template-columns: repeat(3, 15px); /* Ширина пікселя 15px */
+            grid-template-rows: repeat(5, 15px);    /* Висота пікселя 15px */
+            gap: 1px; /* Маленький проміжок, щоб бачити сітку */
+        }
+
+        .pixel {
+            width: 100%;
+            height: 100%;
+            background-color: #eee; /* СІРИЙ КОЛІР для неактивних (як на калькуляторі) */
+        }
+
+        .pixel.active {
+            background-color: red; /* ЧЕРВОНИЙ для активних */
+            box-shadow: 0 0 2px rgba(255, 0, 0, 0.5); /* Легке світіння */
+        }
+
+        /* Поле вводу */
+        #captcha-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 20px;
+            border: 2px solid #ccc;
+            text-align: center;
+        }
+
+        #hint {
+            color: blue;
+            font-size: 12px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        #message {
+            height: 20px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Введіть число</h2>
+        
+        <div id="captcha-box"></div> <!-- ОЦЕЙ ЕЛЕМЕНТ ПОТРІБЕН! -->
+
+<div id="captcha-input"></div>
+        <input type="number" id="user-input" placeholder="Ваша відповідь">
+        <br>
+        <button onclick="checkCaptcha()">Перевірити</button>
+        <button onclick="initCaptcha(2)" style="background-color: #6c757d;">Оновити</button>
+
+        <div id="message"></div>
+
+    </div>
+<script src="./scripts/task5.js"></script>  
+</body>
+</html>
