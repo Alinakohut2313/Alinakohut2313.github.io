@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Generator Lab 8 - Variant 10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="tabs">
+    <div class="tab whiteborder">Border Radius</div>
+    <div class="tab">List Style Position (Вар. 10)</div>
+    <div class="tab">List Style Type (Вар. 10)</div>
+
+    <div class="tabContent show">
+        <h3>Генератор Border Radius</h3>
+        <div class="control-group">
+            <label>Верхній лівий (rtl):</label>
+            <input type="range" id="rtl" min="0" max="100" value="0" oninput="generateRadius()">
+            <input type="text" id="ttl" value="0">
+        </div>
+        <div class="control-group">
+            <label>Верхній правий (rtr):</label>
+            <input type="range" id="rtr" min="0" max="100" value="0" oninput="generateRadius()">
+            <input type="text" id="ttr" value="0">
+        </div>
+        <div class="control-group">
+            <label>Нижній правий (rbr):</label>
+            <input type="range" id="rbr" min="0" max="100" value="0" oninput="generateRadius()">
+            <input type="text" id="tbr" value="0">
+        </div>
+        <div class="control-group">
+            <label>Нижній лівий (rbl):</label>
+            <input type="range" id="rbl" min="0" max="100" value="0" oninput="generateRadius()">
+            <input type="text" id="tbl" value="0">
+        </div>
+
+        <div id="block"></div>
+
+        <label><b>CSS Code:</b></label>
+        <textarea id="cssOutputRadius" readonly></textarea>
+    </div>
+
+    <div class="tabContent hide">
+        <h3>Генератор List Style Position</h3>
+                <p>Визначає, де буде знаходитись маркер списку: всередині контенту чи зовні.</p>
+        
+        <div class="control-group">
+            <label><input type="radio" name="lsp" value="outside" checked onchange="generateListPosition()"> outside (за замовчуванням)</label><br>
+            <label><input type="radio" name="lsp" value="inside" onchange="generateListPosition()"> inside (всередині блоку)</label>
+        </div>
+
+        <div class="demo-list">
+            <ul id="demoListPos">
+                <li>Елемент списку 1</li>
+                <li>Елемент списку 2</li>
+                <li>Елемент списку 3</li>
+            </ul>
+        </div>
+
+        <label><b>CSS Code:</b></label>
+        <textarea id="cssOutputPos" readonly></textarea>
+    </div>
+
+    <div class="tabContent hide">
+        <h3>Генератор List Style Type</h3>
+        <p>Визначає вигляд маркера пункту списку.</p>
+        
+        <div class="control-group">
+            <label>Тип маркера:</label>
+            <select id="lstSelect" onchange="generateListType()">
+                <option value="disc">disc (кружок)</option>
+                <option value="circle">circle (кільце)</option>
+                <option value="square">square (квадрат)</option>
+                <option value="decimal">decimal (цифри)</option>
+                <option value="lower-alpha">lower-alpha (малі літери)</option>
+                <option value="upper-roman">upper-roman (римські цифри)</option>
+                <option value="none">none (без маркера)</option>
+            </select>
+        </div>
+
+        <div class="demo-list">
+            <ul id="demoListType">
+                <li>Елемент списку A</li>
+                <li>Елемент списку B</li>
+                <li>Елемент списку C</li>
+            </ul>
+        </div>
+
+        <label><b>CSS Code:</b></label>
+        <textarea id="cssOutputType" readonly></textarea>
+    </div>
+</div>
+
+
+<script src="task.js"></script>
+</body>
+</html>
