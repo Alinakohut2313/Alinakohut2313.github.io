@@ -16,19 +16,19 @@ let correctCaptcha = "";
 
         function initCaptcha(length) {
             const box = document.getElementById('captcha-box');
-            box.innerHTML = ''; // Очистка
+            box.innerHTML = ''; 
             correctCaptcha = '';
 
             for (let i = 0; i < length; i++) {
-                // Генеруємо випадкову цифру
+               
                 let num = Math.floor(Math.random() * 10);
                 correctCaptcha += num;
 
-                // Створюємо блок для цифри
+                
                 let digitDiv = document.createElement('div');
                 digitDiv.className = 'digit';
 
-                // Заповнюємо пікселями (span-блоками за завданням)
+              
                 digits[num].forEach(p => {
                     let span = document.createElement('span');
                     span.className = 'pixel' + (p ? ' active' : '');
@@ -39,23 +39,23 @@ let correctCaptcha = "";
             }
         }
 
-        // Перевірка при введенні (або втраті фокусу)
+     
         document.getElementById('captcha-input').addEventListener('input', function() {
             let val = this.value;
             let msg = document.getElementById('message');
 
-            // Перевіряємо тільки якщо введено повне число (довжина співпадає)
+           
             if (val.length === correctCaptcha.length) {
                 if (val === correctCaptcha) {
-                    msg.textContent = ""; // Прибираємо напис, якщо вірно (або можна писати "Ок")
+                    msg.textContent = ""; 
                     msg.className = "success";
-                    // Можна зробити редірект або щось іще
+                   
                 } else {
                     msg.textContent = "Помилка";
                     msg.className = "error";
                 }
             } else {
-                msg.textContent = ""; // Очищаємо, поки набирає
+                msg.textContent = ""; 
             }
         });
 function checkCaptcha() {
@@ -71,5 +71,5 @@ function checkCaptcha() {
     }
 }
 
-        // Запуск (генеруємо 2 цифри, як на фото)
+       
         initCaptcha(2);
