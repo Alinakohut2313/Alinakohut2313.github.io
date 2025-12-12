@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Моя Карта</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Відстеження та Карта</h1>
+
+        <button onclick="startTracking()" class="btn-main"> Почати стеження за мною</button>
+
+        <hr>
+
+        <div class="search-box">
+            <h3>Знайти місце:</h3>
+            <input type="text" id="latInput" placeholder="Широта (напр. 48.92)">
+            <input type="text" id="lngInput" placeholder="Довгота (напр. 24.71)">
+            <button onclick="goToDestination()"> Полетіти туди</button>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
